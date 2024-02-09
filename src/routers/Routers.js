@@ -12,19 +12,19 @@ import Profile from '../pages/Profile'
 import Register from '../pages/Register'
 
 
-const Routers = ({ URL = "" }) => {
+const Routers = () => {
   return (
     <Routes>
-      <Route path={`/`} element={<Home URL={URL} />} />
-      <Route path={`home`} element={<Home URL={URL} />} />
-      <Route path={`/about`} element={<About URL={URL} />} />
-      <Route path={`/contact`} element={<Contact URL={URL} />} />
-      <Route path={`/menu`} element={<Menu URL={URL} />} />
-      <Route path={`/cart`} element={<Cart URL={URL} />} />
-      <Route path={`/login`} element={<Login URL={URL} />} />
-      <Route path={`/register`} element={<Register URL={URL} />} />
-      <Route path={`/checkout`} element={<Checkout URL={URL} />} />
-      <Route path={`/profile`} element={<Profile URL={URL} />} />
+      <Route path={`/`} element={<Home />} />
+      <Route path={`home`} element={<Home />} />
+      <Route path={`/about`} element={<About />} />
+      <Route path={`/contact`} element={<Contact />} />
+      <Route path={`/menu`} element={<Menu />} />
+      <Route path={`/cart`} element={<Cart />} />
+      <Route path={`/login`} element={<Login />} />
+      <Route path={`/register`} element={<Register />} />
+      <Route path={`/checkout`} element={<Checkout />} />
+      <Route path={`/profile`} element={<Profile />} />
     </Routes>
   )
 }

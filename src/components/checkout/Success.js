@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-const Success = ({ setOrderState, order , URL }) => {
+const Success = ({ setOrderState, order}) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const Success = ({ setOrderState, order , URL }) => {
         
         setOrderState(1);
 
-        navigate(URL+'/home');
+        navigate('/home');
     }
 
 

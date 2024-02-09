@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, ErrIcon } from '../components/icons/CommonIcons'
 
 
-const Register = ({URL}) => {
+const Register = () => {
 
     const navigate = useNavigate()
 
@@ -124,7 +124,7 @@ const Register = ({URL}) => {
                             cpassword: ''
                         })
 
-                        navigate(URL+'/login');
+                        navigate('/login');
                     }
                     else {
 
@@ -154,7 +154,7 @@ const Register = ({URL}) => {
                                 cpassword: ''
                             })
 
-                            navigate(URL+'/login');
+                            navigate('/login');
 
                         }
 
@@ -249,7 +249,7 @@ const Register = ({URL}) => {
                     <div className='flex items-center justify-center gap-3 mt-5 text-sm font-bold'>
                         <p>Already a customer ?</p>
                         <div>
-                            <Link to={`${URL}/login`} className='underline text-prime hover:text-gray-600'>Login here</Link>
+                            <Link to={`/login`} className='underline text-prime hover:text-gray-600'>Login here</Link>
                         </div>
                     </div>
                 </div>

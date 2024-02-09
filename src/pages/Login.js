@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, Close, ErrIcon } from '../components/icons/CommonIcons'
 
-const Login = ({URL}) => {
+const Login = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const Login = ({URL}) => {
 
         console.log(LoggedUser);
         if(LoggedUser != null) {
-            navigate(URL+'/profile');
+            navigate('/profile');
         }
     })
 
@@ -122,7 +122,7 @@ const Login = ({URL}) => {
                                 fcpassword: '',
                             })
                             alert("Logged in successfully");
-                            navigate(URL+'/profile');
+                            navigate('/profile');
                         }
                         else {
                             setData({
@@ -191,7 +191,7 @@ const Login = ({URL}) => {
                             <div className='flex items-center justify-center gap-3 mt-5 text-sm font-bold'>
                                 <p>New here ?</p>
                                 <div>
-                                    <Link to={`${URL}/register`} className='underline text-prime hover:text-gray-600'>Join our family</Link>
+                                    <Link to={`/register`} className='underline text-prime hover:text-gray-600'>Join our family</Link>
                                 </div>
                             </div>
                         </div>

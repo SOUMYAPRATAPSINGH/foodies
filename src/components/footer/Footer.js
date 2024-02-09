@@ -12,7 +12,7 @@ import twitIcon from '../../assets/images/social/twitter.png'
 import { motion } from 'framer-motion'
 
 
-const Footer = ({ URL = "" }) => {
+const Footer = () => {
     return (
         <>
             <div className='bg-gray-100 p-5 rounded-t-[200px]'>
@@ -55,10 +55,10 @@ const Footer = ({ URL = "" }) => {
                     <div className='col-span-1'>
                         <h1 className='font-bold text-lg text-prime mb-3'>Useful Links</h1>
                         <ul>
-                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`${URL}/`}>Home</Link></li>
-                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`${URL}/menu`}>Menu</Link></li>
-                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`${URL}/about`}>About</Link></li>
-                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`${URL}/contact`}>Contact</Link></li>
+                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`/`}>Home</Link></li>
+                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`/menu`}>Menu</Link></li>
+                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`/about`}>About</Link></li>
+                            <li className='mb-1 text-sm font-semibold text-gray-700'><Link to={`/contact`}>Contact</Link></li>
                         </ul>
                     </div>
                     <div className='col-span-1 sm:col-span-2'>

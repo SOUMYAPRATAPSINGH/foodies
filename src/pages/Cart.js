@@ -6,7 +6,7 @@ import CartCard from '../components/cards/CartCard'
 import { ArrowRight } from '../components/icons/CommonIcons'
 
 
-const Cart = ({URL}) => {
+const Cart = () => {
 
   const dispatch = useDispatch()
 
@@ -64,7 +64,7 @@ const Cart = ({URL}) => {
                   </div>
                 </div>
                 <div className='absolute left-0 w-full px-5 bottom-5'>
-                  <Link to={`${URL}/checkout`}  className='mt-2 sm:mt-0 transition duration-300 ease-in-out bg-prime w-full flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 sm:px-5 sm:py-3'><span className='mx-auto text-xs font-medium uppercase sm:font-bold sm:text-sm'>Proceed to Checkout</span><span className=' absolute -top-0.5 sm:-top-0 -right-0.5 sm:-right-1 p-1 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></Link>
+                  <Link to={`/checkout`}  className='mt-2 sm:mt-0 transition duration-300 ease-in-out bg-prime w-full flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 sm:px-5 sm:py-3'><span className='mx-auto text-xs font-medium uppercase sm:font-bold sm:text-sm'>Proceed to Checkout</span><span className=' absolute -top-0.5 sm:-top-0 -right-0.5 sm:-right-1 p-1 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></Link>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Cart = ({URL}) => {
           <div className='flex flex-col items-center justify-center col-span-12 p-5 sm:p-10'>
             <img src={EmpCart} alt='empty cart' className='my-5 opacity-20 w-28' />
             <h1 className='text-xl sm:text-2xl font-bold text-gray-400 text-center '>Your cart is Empty, Let's Add some</h1>
-            <Link to={`${URL}/menu`} whileHover={{ scale: 1.05 }} className='my-10 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 '><span className='mr-6 text-xs font-medium uppercase sm:font-bold'>Our Menu</span><span className=' absolute -top-1  -right-0.5 sm:-right-1 p-1  shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full  bg-white text-prime/50'><ArrowRight /></span></Link>
+            <Link to={`/menu`} whileHover={{ scale: 1.05 }} className='my-10 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 '><span className='mr-6 text-xs font-medium uppercase sm:font-bold'>Our Menu</span><span className=' absolute -top-1  -right-0.5 sm:-right-1 p-1  shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full  bg-white text-prime/50'><ArrowRight /></span></Link>
           </div>
       }
 

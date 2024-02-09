@@ -4,7 +4,7 @@ import Confirmation from '../components/checkout/Confirmation'
 import Payment from '../components/checkout/Payment'
 import Success from '../components/checkout/Success'
 
-const Checkout = ({URL}) => {
+const Checkout = () => {
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -198,7 +198,7 @@ const Checkout = ({URL}) => {
       }
       {
         orderState == 4 &&
-        <Success URL={URL} setOrderState={setOrderState} order={order} />
+        <Success setOrderState={setOrderState} order={order} />
       }
 
 

@@ -9,7 +9,7 @@ import Search from '../../pages/Search'
 import SearchBarCard from '../cards/SearchBarCard'
 
 
-const Header = ({ URL }) => {
+const Header = () => {
 
 
   const location = useLocation()
@@ -98,22 +98,22 @@ const Header = ({ URL }) => {
       <div className='fixed z-50 w-full bg-white'>
         <div className='relative z-50 flex items-center justify-between px-5 py-4 sm:px-10 md:px-16 lg:px-24'>
           <div>
-            <Link to={`${URL}/`}>
+            <Link to={`/`}>
               <p className='text-3xl font-bold tracking-[1px] text-prime'>Foodies</p>
             </Link>
           </div>
           <div className='items-center justify-center hidden gap-10 font-bold text-black/70 md:flex'>
             <motion.div whileHover={active === 'home' ? {} : { scale: 0.95 }} className={active === 'home' ? 'text-prime font-black' : 'hover:text-prime'} onClick={() => setActive('home')}>
-              <Link to={`${URL}/home`}>Home</Link>
+              <Link to={`/home`}>Home</Link>
             </motion.div>
             <motion.div whileHover={active === 'menu' ? {} : { scale: 0.95 }} className={active === 'menu' ? 'text-prime font-black' : 'hover:text-prime'} onClick={() => setActive('menu')}>
-              <Link to={`${URL}/menu`}>Menu</Link>
+              <Link to={`/menu`}>Menu</Link>
             </motion.div>
             <motion.div whileHover={active === 'about' ? {} : { scale: 0.95 }} className={active === 'about' ? 'text-prime font-black' : 'hover:text-prime'} onClick={() => setActive('about')}>
-              <Link to={`${URL}/about`} >About</Link>
+              <Link to={`/about`} >About</Link>
             </motion.div>
             <motion.div whileHover={active === 'contact' ? {} : { scale: 0.95 }} className={active === 'contact' ? 'text-prime font-black' : 'hover:text-prime'} onClick={() => setActive('contact')}>
-              <Link to={`${URL}/contact`}>Contact</Link>
+              <Link to={`/contact`}>Contact</Link>
             </motion.div>
           </div>
           <div className='flex items-center justify-center gap-2 sm:gap-4 md:gap-7' >
@@ -122,7 +122,7 @@ const Header = ({ URL }) => {
             </motion.div>
             <motion.div whileHover={{ scale: 0.9 }}>
               <div className='relative'>
-                <Link to={`${URL}/cart`}>
+                <Link to={`/cart`}>
                   <ShoppingCart />
                   <span className='absolute -top-2 left-4 bg-prime w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] leading-5 sm:leading-5 text-center rounded-full text-white text-[9px] sm:text-[11px] font-sans font-bold'>{cart.length}</span>
                 </Link>
@@ -139,7 +139,7 @@ const Header = ({ URL }) => {
             </motion.div> */}
             <motion.div whileHover={{ scale: 0.9 }}>
               <div className='relative'>
-                <Link to={`${URL}${window.localStorage.getItem('user') ? "/profile" : "/login"}`} >
+                <Link to={`${window.localStorage.getItem('user') ? "/profile" : "/login"}`} >
                   <div className='flex items-center justify-center gap-1'>
                     <User />
                   </div>

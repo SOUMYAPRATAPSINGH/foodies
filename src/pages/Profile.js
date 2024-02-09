@@ -9,7 +9,7 @@ import { ArrowRight, CheckIcon, Close, HomeIcon, LogOutIcon } from '../component
 import Modal from '../components/modals/Modal'
 
 
-const Profile = ({URL}) => {
+const Profile = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -44,13 +44,13 @@ const Profile = ({URL}) => {
             setUserData(currentUser);
         }
         else {
-            navigate(URL+'/login');
+            navigate('/login');
         }
     },[])
 
     const logoutHandler = () => {
         window.localStorage.removeItem('loggedUser');
-        navigate(URL+'/login');
+        navigate('/login');
 
     }
 

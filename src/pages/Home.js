@@ -20,7 +20,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FoodData } from '../assets/Data/FoodData'
 
-const Home = ({URL}) => {
+const Home = () => {
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -51,7 +51,7 @@ const Home = ({URL}) => {
             <div className='flex flex-col justify-center'>
               <h1 className='text-3xl sm:text-[5vw] font-bold leading-tight'>Choosing Quality Food</h1>
               <p className='w-full my-4 text-xs font-semibold leading-4 text-gray-400 sm:my-10 md:w-5/6 md:leading-7 sm:text-sm md:text-base'>It is established fact that reader will be distracted by the readable content of a page when looking at its layout. It is established fact that reader will be distracted by the readable content of a page when looking at its layout.</p>
-              <Link to={`${URL}/menu`}><motion.button whileHover={{ scale: 1.05 }} className='mt-5 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-4 py-2 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-bold uppercase sm:mr-10 sm:text-sm'>Discover menu</span><span className=' absolute -top-[1px] sm:-top-0 -right-1 p-1.5 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
+              <Link to={`/menu`}><motion.button whileHover={{ scale: 1.05 }} className='mt-5 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-4 py-2 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-bold uppercase sm:mr-10 sm:text-sm'>Discover menu</span><span className=' absolute -top-[1px] sm:-top-0 -right-1 p-1.5 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
             </div>
           </div>
           <div className="order-1 hidden col-span-1 py-5 sm:order-2 sm:block" >
@@ -124,7 +124,7 @@ const Home = ({URL}) => {
                   <img src={banPot} alt="" className="w-1/2 aspect-square mx-auto my-5 " />
                 </div>
                 <p className='w-full my-3 text-xs font-semibold leading-4 text-gray-400 sm:my-10 md:w-5/6 md:leading-7 sm:text-sm md:text-base'>It is established fact that reader will be distracted by the readable content of a page when looking at its layout. It is established fact that reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <Link to={`${URL}/about`}><motion.button whileHover={{ scale: 1.05 }} className='mt-2 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-medium uppercase sm:mr-10 sm:font-bold sm:text-sm'>Learn More</span><span className=' absolute -top-0.5 sm:-top-0 -right-0.5 sm:-right-1 p-1 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
+                <Link to={`/about`}><motion.button whileHover={{ scale: 1.05 }} className='mt-2 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-3 py-1 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-medium uppercase sm:mr-10 sm:font-bold sm:text-sm'>Learn More</span><span className=' absolute -top-0.5 sm:-top-0 -right-0.5 sm:-right-1 p-1 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ const Home = ({URL}) => {
             }
           </div>
           <div className='flex items-center justify-center p-10'>
-          <Link to={`${URL}/menu`}><motion.button whileHover={{ scale: 1.05 }} className='mt-5 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-4 py-2 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-bold uppercase sm:mr-10 sm:text-sm'>Explore More</span><span className=' absolute -top-[1px] sm:-top-0 -right-1 p-1.5 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
+          <Link to={`/menu`}><motion.button whileHover={{ scale: 1.05 }} className='mt-5 sm:mt-0 transition duration-300 ease-in-out bg-prime w-fit flex rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.1)] text-white relative px-4 py-2 sm:px-5 sm:py-3'><span className='mr-6 text-xs font-bold uppercase sm:mr-10 sm:text-sm'>Explore More</span><span className=' absolute -top-[1px] sm:-top-0 -right-1 p-1.5 sm:p-2.5 shadow-[0px_0px_10px_2px_rgba(254,84,50,0.3)] rounded-full bg-white text-prime/50'><ArrowRight /></span></motion.button></Link>
           </div>
         </div>
       </div>

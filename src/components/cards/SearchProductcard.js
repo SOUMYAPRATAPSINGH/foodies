@@ -3,17 +3,13 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/slices/cartSlice'
 import { Minus, Plus, StarEmp, StarFill } from '../icons/CommonIcons'
-import FoodModal from '../modals/FoodModal'
+
 
 const SearchProductcard = ({ item }) => {
 
     const dispatch = useDispatch()
 
     const [quan, setQuan] = useState(1)
-
-    const [openModal, setOpenModal] = useState(false)
-
-    const [size, setSize] = useState('')
 
     const fillStars = []
 
@@ -42,7 +38,6 @@ const SearchProductcard = ({ item }) => {
             setQuan((current) => current + 1)
         }
     }
-    const slug = item.name.replaceAll(" ", "-");
 
 
 
@@ -51,7 +46,7 @@ const SearchProductcard = ({ item }) => {
         const data = {
             item: item,
             quantity: quan,
-            size: item.category === "pizza" || item.category === "fries" ? "Small" : "2 ounce"
+
         }
         dispatch(addToCart(data))
     }
@@ -59,8 +54,7 @@ const SearchProductcard = ({ item }) => {
 
     return (
         <div className='col-span-1 bg-white p-3 border-b-2 md:border-none sm:rounded-xl sm:shadow relative'>
-            {/* <Link to={`/food/${slug}`}> */}
-            <div onClick={() => setOpenModal(!openModal)} className="cursor-pointer">
+            <div  className="cursor-pointer">
                 <div className='grid grid-cols-12 gap-4  min-h-[120px] items-center'>
                     <div className='col-span-5
                    md:col-span-4'>
@@ -97,14 +91,12 @@ const SearchProductcard = ({ item }) => {
                                 <motion.button whileTap={{ scale: 0.90 }} className='p-1 bg-white  rounded-r-[30px]' onClick={incQuan}><Plus /></motion.button>
 
                             </div>
-                            <motion.button whileTap={{ scale: 0.9 }} className='bg-prime text-white px-3 py-1 text-sm rounded-[30px] shadow-[0_0_3px_0px_rgba(0,0,0,0.3)] font-bold flex items-center justify-center '>ADD</motion.button>
+                            <motion.button onClick={addToCartHandler} whileTap={{ scale: 0.9 }} className='bg-prime text-white px-3 py-1 text-sm rounded-[30px] shadow-[0_0_3px_0px_rgba(0,0,0,0.3)] font-bold flex items-center justify-center ' on>ADD</motion.button>
 
                         </div>
                     </div>
                 </div>
-                {/* </Link> */}
             </div>
-            <FoodModal item={item} state={openModal} setState={setOpenModal} quan={quan} setQuan={setQuan} size={size} setSize={setSize} />
         </div>
     )
 }

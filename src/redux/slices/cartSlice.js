@@ -21,8 +21,6 @@ const cartSlice = createSlice({
         addToCart: (state, action) => {
             const item = action.payload.item
             const quan = action.payload.quantity
-            const size = action.payload.size
-
 
             const loggedUser = JSON.parse(window.localStorage.getItem('loggedUser'));
             if (loggedUser != null) {
@@ -33,7 +31,6 @@ const cartSlice = createSlice({
                         ...item,
                         Uid: loggedUser.Uid,
                         quantity: quan,
-                        size: size,
                         total: quan * item.price
                     }
                     state.cart.push(obj)
@@ -41,7 +38,6 @@ const cartSlice = createSlice({
                 else {
                     const cartIndex = state.cart.findIndex((val) => val.id === item.id)
                     state.cart[cartIndex].quantity = state.cart[cartIndex].quantity + quan
-                    state.cart[cartIndex].size = size
                     state.cart[cartIndex].total = state.cart[cartIndex].total + (quan * item.price)
                 }
             }
@@ -53,7 +49,6 @@ const cartSlice = createSlice({
                         ...item,
                         Uid: 'guest',
                         quantity: quan,
-                        size: size,
                         total: quan * item.price
                     }
                     state.cart.push(obj)
@@ -61,7 +56,6 @@ const cartSlice = createSlice({
                 else {
                     const cartIndex = state.cart.findIndex((val) => val.id === item.id)
                     state.cart[cartIndex].quantity = state.cart[cartIndex].quantity + quan
-                    state.cart[cartIndex].size = size
                     state.cart[cartIndex].total = state.cart[cartIndex].total + (quan * item.price)
                 }
             }
@@ -86,14 +80,12 @@ const cartSlice = createSlice({
         updateFromCart: (state, action) => {
             const item = action.payload
             const quan = action.payload.quantity
-            const size = action.payload.size
             const type = action.payload.type
 
 
 
             const cartIndex = state.cart.findIndex((val) => val.id === item.id)
             state.cart[cartIndex].quantity = quan
-            state.cart[cartIndex].size = size
             if (type === "dec") {
                 state.cart[cartIndex].total !== item.price && (state.cart[cartIndex].total = state.cart[cartIndex].total - item.price)
                 state.cart[cartIndex].total === item.price && (state.cart[cartIndex].total = state.cart[cartIndex].total)

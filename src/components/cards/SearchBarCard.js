@@ -10,7 +10,6 @@ const SearchBarCard = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false)
 
-    const [size, setSize] = useState('')
 
     const fillStars = []
 
@@ -43,16 +42,6 @@ const SearchBarCard = ({ item }) => {
 
 
 
-    function addToCartHandler() {
-
-        const data = {
-            item: item,
-            quantity: quan,
-            size: item.category === "pizza" || item.category === "fries" ? "Small" : "2 ounce"
-        }
-        dispatch(addToCart(data))
-    }
-
 
 
     return (
@@ -65,7 +54,7 @@ const SearchBarCard = ({ item }) => {
                     <h1 className='text-sm font-bold'>{item.name}</h1>
                     <p className='text-xs text-gray-500'>in <span className='font-bold text-prime'>{item.category}</span></p>
                 </div>
-                {/* <FoodModal item={item} state={openModal} setState={setOpenModal} quan={quan} setQuan={setQuan} size={size} setSize={setSize} /> */}
+               
             </div>
         </>
     )

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ArrowRight, ErrIcon, HomeIcon } from '../icons/CommonIcons';
 
-const CheckOutForm = ({setOrderState , address , setAddress}) => {
+const CheckOutForm = ({ setOrderState, address, setAddress }) => {
 
 
     const { cart, total } = useSelector((state) => state.cart);
@@ -12,7 +12,7 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
         setUser(loggedUser);
     })
 
-    
+
 
 
     const inputHadler = (e) => {
@@ -24,7 +24,6 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
         let ep = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
         let mp = /^[6-9]\d{9}$/
         let pp = /^[1-9]{1}\d{2}\s?\d{3}$/
-        let passp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
 
         if (e.target.value === "") {
             document.getElementById(`${e.target.name}err`).classList.remove('hidden');
@@ -45,7 +44,7 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
     }
 
     const checkAddress = () => {
-       
+
         let fields = [address.fullname, address.email, address.mobile, address.address, address.pincode, address.password, address.state, address.city, address.cpassword]
         let ep = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
         let mp = /^[6-9]\d{9}$/
@@ -76,7 +75,7 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
                 val = true;
             }
         }
-        if(val == true) {
+        if (val == true) {
             setOrderState(2);
         }
 
@@ -190,8 +189,8 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
                                                                     <select name="" id="" className='bg-gray-100 px-5 py-2 rounded w-full cursor-pointer'>
                                                                         <option>Enter state</option>
                                                                         <option>Gujarat</option>
-                                                                        <option>Gujarat</option>
-                                                                        <option>Gujarat</option>
+                                                                        <option>Maharashtra</option>
+                                                                        <option>Rajhsthan</option>
                                                                     </select>
                                                                 </div>
                                                                 <div className="col-span-1">
@@ -200,6 +199,10 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
                                                                         <option>Ahmedabad</option>
                                                                         <option>Surat</option>
                                                                         <option>Vadodara</option>
+                                                                        <option>Mumbai</option>
+                                                                        <option>Pune</option>
+                                                                        <option>Jaipur</option>
+                                                                        <option>Jodhpur</option>
                                                                     </select>
                                                                 </div>
 
@@ -244,8 +247,8 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
                                                     <select name="state" value={address.state} onChange={inputHadler} id="" className='bg-gray-100 px-5 py-2 rounded w-full cursor-pointer'>
                                                         <option>Enter state</option>
                                                         <option>Gujarat</option>
-                                                        <option>Gujarat</option>
-                                                        <option>Gujarat</option>
+                                                        <option>Maharashtra</option>
+                                                        <option>Rajhsthan</option>
                                                     </select>
                                                     <span id="stateerr" className='hidden gap-1 mt-1 text-xs font-bold text-red-400'><span className='flex items-center justify-start gap-1 mt-1'><ErrIcon /> <span>Enter valid state</span></span></span>
                                                 </div>
@@ -255,6 +258,10 @@ const CheckOutForm = ({setOrderState , address , setAddress}) => {
                                                         <option>Ahmedabad</option>
                                                         <option>Surat</option>
                                                         <option>Vadodara</option>
+                                                        <option>Mumbai</option>
+                                                        <option>Pune</option>
+                                                        <option>Jaipur</option>
+                                                        <option>Jodhpur</option>
                                                     </select>
                                                     <span id="cityerr" className='hidden gap-1 mt-1 text-xs font-bold text-red-400'><span className='flex items-center justify-start gap-1 mt-1'><ErrIcon /> <span>Enter valid city</span></span></span>
                                                 </div>

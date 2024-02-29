@@ -22,11 +22,11 @@ const Footer = () => {
                 </div>
                 <div>
                     <ul className='flex justify-center items-center gap-10'>
-                        <li><a href=""><img src={fbIcon} alt='facebook' className='w-6' /></a></li>
-                        <li><a href=""><img src={pinIcon} alt='pintrest' className='w-6' /></a></li>
-                        <li><a href=""><img src={twitIcon} alt='twitter' className='w-6' /></a></li>
-                        <li><a href=""><img src={instaIcon} alt='instagram' className='w-6' /></a></li>
-                        <li><a href=""><img src={gpIcon} alt='google plus' className='w-6' /></a></li>
+                        <li><Link to="/"><img src={fbIcon} alt='facebook' className='w-6' /></Link></li>
+                        <li><Link to="/"><img src={pinIcon} alt='pintrest' className='w-6' /></Link></li>
+                        <li><Link to="/"><img src={twitIcon} alt='twitter' className='w-6' /></Link></li>
+                        <li><Link to="/"><img src={instaIcon} alt='instagram' className='w-6' /></Link></li>
+                        <li><Link to="/"><img src={gpIcon} alt='google plus' className='w-6' /></Link></li>
                     </ul>
                 </div>
                 <div className='flex flex-col md:flex-row gap-5 md:gap-0 justify-around items-center text-black px-10 pt-10'>

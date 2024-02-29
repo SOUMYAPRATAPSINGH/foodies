@@ -88,11 +88,6 @@ const Header = () => {
   }, [searchVal])
 
 
-  // const fetchData = async () => {
-
-  // }
-  // fetchData()
-
   return (
     <>
       <div className='fixed z-50 w-full bg-white'>
@@ -128,15 +123,6 @@ const Header = () => {
                 </Link>
               </div>
             </motion.div>
-            {/* <motion.div whileHover={{ scale: 0.9 }}>
-              <div className='relative'>
-                <Link to='/login'>
-                  <div className='flex items-center justify-center'>
-                    <User />
-                  </div>
-                </Link>
-              </div>
-            </motion.div> */}
             <motion.div whileHover={{ scale: 0.9 }}>
               <div className='relative'>
                 <Link to={`${window.localStorage.getItem('user') ? "/profile" : "/login"}`} >
@@ -174,11 +160,11 @@ const Header = () => {
                               totalData.map((item) => {
                                 const slug = item.name.replaceAll(" ", "-");
                                 return (
-                                  // <div className='relative'>
+                           
 
                                   <SearchBarCard item={item} />
 
-                                  // </div>
+                       
                                 )
 
                               })

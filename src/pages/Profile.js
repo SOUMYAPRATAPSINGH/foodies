@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import onTheWay from '../assets/images/icons/fast-delivery.png'
 import preparing from '../assets/images/icons/main-dish.png'
@@ -12,7 +11,6 @@ import Modal from '../components/modals/Modal'
 const Profile = () => {
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
 
 
     useEffect(() => {
@@ -20,7 +18,6 @@ const Profile = () => {
       },[])
     
 
-    const [auth, setAuth] = useState('')
     const [sideNav, setSideNav] = useState('profile')
     const [editForm, setEditForm] = useState(false)
     const [passForm, setPassForm] = useState(false)
@@ -46,7 +43,7 @@ const Profile = () => {
         else {
             navigate('/login');
         }
-    },[])
+    },[navigate])
 
     const logoutHandler = () => {
         window.localStorage.removeItem('loggedUser');

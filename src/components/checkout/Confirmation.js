@@ -46,7 +46,6 @@ const Confirmation = ({ address, setOrderState }) => {
                     <div className='bg-white shadow rounded-3xl p-5 sm:p-8  relative h-full'>
                         {
                             cart.map((item) => {
-                                // console.log(item)
                                 return (
                                     <>
 

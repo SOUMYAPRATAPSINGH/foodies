@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { Close, Minus, Plus } from '../../components/icons/CommonIcons'
 import { removeFromCart, updateFromCart } from '../../redux/slices/cartSlice'
 import Modal from '../modals/Modal'
@@ -9,12 +8,10 @@ import Modal from '../modals/Modal'
 const CartCard = ({ data }) => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+
 
 
     const [quan, setQuan] = useState(Number(data.quantity))
-
-    const [size, setSize] = useState(data.size)
 
     const [deleteModal, setDeleteModal] = useState(false)
 
@@ -42,23 +39,9 @@ const CartCard = ({ data }) => {
         const val = {
             ...data,
             quantity: quan,
-            size: size,
             type: type
         }
         dispatch(updateFromCart(val))
-    }
-
-
-
-    function sizeHandler(e) {
-        setSize(e.target.value)
-        const val = {
-            ...data,
-            quantity: quan,
-            size: size
-        }
-
-
     }
 
 
@@ -98,99 +81,7 @@ const CartCard = ({ data }) => {
                     <Close />
                 </motion.button>
             </div>
-            <div className="flex items-center justify-start col-span-12 gap-5">
-                {
 
-                    data.category === "pizza" ? <div className='flex items-start justify-start gap-4'>
-                        <label className='text-sm font-semibold text-gray-500'>Size:</label>
-                        <ul class="flex flex-wrap justify-start items-start gap-2">
-                            <li>
-
-                                <input type="radio" id={`personal${data.id}`} name="hosting" value="Personal" class="hidden peer" checked={size === "Personal" ? "checked" : ""} />
-                                <label for={`personal${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">Personal</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id={`small${data.id}`} name="hosting" value="Small" class="hidden peer" checked={size === "Small" ? "checked" : ""} />
-                                <label for={`small${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">Small</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id={`medium${data.id}`} name="hosting" value="Medium" class="hidden peer" checked={size === "Medium" ? "checked" : ""} />
-                                <label for={`medium${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">Medium</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id={`large${data.id}`} name="hosting" value="Large" class="hidden peer" checked={size === "Large" ? "checked" : ""} />
-                                <label for={`large${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">Large</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                        : ""
-
-                }
-                {
-                    data.category === "burger" ? <div className='flex items-center gap-4'>
-                        <label className='text-sm font-semibold text-gray-500'>Size:</label>
-                        <ul class="flex justify-start items-start gap-2">
-
-                            <li>
-                                <input type="radio" id={`twoounce${data.id}`} name="hosting" value="2 ounce" class="hidden peer" checked={size === "2 ounce" ? "checked" : ""} />
-                                <label for={`twoounce${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">2 ounce</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id={`threeounce${data.id}`} name="hosting" value="3 ounce" class="hidden peer" checked={size === "3 ounce" ? "checked" : ""} />
-                                <label for={`threeounce${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">3 ounce</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id={`fourounce${data.id}`} name="hosting" value="4 ounce" class="hidden peer" checked={size === "4 ounce" ? "checked" : ""} />
-                                <label for={`fourounce${data.id}`} class="inline-flex items-center justify-between w-fit px-2 py-1 text-gray-700 bg-gray-200 border border-gray-200 rounded-lg cursor-pointer peer-checked:border-prime peer-checked:bg-prime peer-checked:text-white hover:bg-gray-100">
-                                    <div class="block">
-                                        <div class="w-full text-xs font-semibold">4 ounce</div>
-
-                                    </div>
-
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                        : ""
-                }
-
-            </div>
 
             <Modal state={deleteModal} setState={setDeleteModal}>
                 <div className='py-5'>
